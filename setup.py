@@ -2,12 +2,18 @@ from setuptools import setup
 from codecs import open
 from os import path
 
-package_name = "midline"
+package_name = "MidLine"
 
 root_dir = path.abspath(path.dirname(__file__))
 
+
 def _requirements():
-    return [name.rstrip() for name in open(path.join(root_dir, 'requirements.txt')).readlines()]
+    return [
+        name.rstrip() for name in open(
+            path.join(
+                root_dir,
+                'requirements.txt')).readlines()]
+
 
 with open('README.md', encoding='utf-8') as f:
     long_description = f.read()
@@ -26,8 +32,6 @@ setup(
     packages=[package_name],
     install_requires=_requirements(),
     classifiers=[
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.9',
     ],
 )
